@@ -50,7 +50,6 @@ function App() {
   const [active, setActive] = useState(false);
 
   const handleChange = useCallback(() => setActive(!active), [active]);
-  const [checked, setChecked] = useState(false);
 
   return (
     <div className="App">
@@ -167,13 +166,11 @@ function App() {
                 <RadioButton
                   label="Set Product images as shown on Shopify"
                   checked={state.imageCriteria === "Shopify"}
-                  id="disabled"
                   name="accounts"
                   onChange={() => changeHandler("Shopify", "imageCriteria")}
                 />
                 <RadioButton
                   label="Set Custom amazon Images"
-                  id="optional"
                   name="accounts"
                   checked={state.imageCriteria === "Custom"}
                   onChange={() => changeHandler("Custom", "imageCriteria")}
@@ -187,7 +184,6 @@ function App() {
         </Layout>
       </Page>
       <Modal
-        // activator={activator}
         open={active}
         onClose={handleChange}
         title="Your Details"
@@ -209,7 +205,7 @@ function App() {
 
             <p>Amazon Category : {state.amazonCategory}</p>
             <p>BarCode Exemption : {state.barcodeExemption ? "Yes" : "No"}</p>
-            <p>Image Choice : {state.imageCriteria }</p>
+            <p>Image Choice : {state.imageCriteria}</p>
           </TextContainer>
         </Modal.Section>
       </Modal>
