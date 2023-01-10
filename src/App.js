@@ -25,7 +25,7 @@ function App() {
     amazonCategory: "",
     imageCriteria: "",
   };
-
+  console.log("Token");
   const [state, dispatch] = useReducer(reducer, initialState);
   function reducer(state, action) {
     switch (action.type) {
